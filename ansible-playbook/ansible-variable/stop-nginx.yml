@@ -1,0 +1,18 @@
+- hosts: webservers
+  become: true
+   nginxlevel: nginx
+  tasks:
+  - name: install nginx
+    apt:
+     name: "{{nginxlevel}}"
+     state: present
+
+  - name: checking nginx status
+    service:
+     name: "{{nginxlevel}}"
+     state: started
+
+  - name: checking nginx status
+    service:
+     name: "{{nginxlevel}}"
+     state: stopped
