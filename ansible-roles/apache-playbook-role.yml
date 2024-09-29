@@ -1,0 +1,7 @@
+- name: Configure Apache on ubuntu
+  hosts: webservers
+  become: yes
+
+
+  roles:
+  - apache_role
